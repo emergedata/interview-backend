@@ -2,7 +2,7 @@
 using System.Linq;
 
 namespace InterviewProject
-{   
+{
     public class Service
     {
         private Data data;
@@ -22,7 +22,12 @@ namespace InterviewProject
             return data.Get(id).Posts.OrderByDescending(p => p.Published).First().Title;
         }
 
-        public string C(int id)
+        /// <summary>
+        /// Get blog first post content
+        /// </summary>
+        /// <param name="id">The blog Id</param>
+        /// <returns>The content of the first post of the blog</returns>
+        public string GetBlogFirstPostContent(int id)
         {
             return data.Get(id).Posts.First().Content;
         }

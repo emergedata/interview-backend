@@ -1,18 +1,21 @@
-using System;
 using Xunit;
 
-namespace InterviewProject.Tests
+namespace InterviewProject.Tests;
+
+public class BlogServiceTests
 {
-    public class BlogServiceTests
+    [Fact]
+    public void GetBlogFirstPostContent_BlogExists_ReturnContent()
     {
-        [Fact]
-        public void C_Formats_result_as_expected()
-        {
-            var blogService = new Service();
-            var blogId = 1;
-            var actualResult = blogService.C(blogId);
-            var expectedResult = $"This is the content of: {blogId}";
-            Assert.Equal(expectedResult, actualResult);
-        }
+        // Arrange
+        const int blogId = 1;
+        var blogService = new Service();
+        var expectedResult = $"This is the content of: {blogId}";
+
+        // Act
+        var result = blogService.GetBlogFirstPostContent(blogId);
+
+        // Assert
+        Assert.Equal(expectedResult, result);
     }
 }

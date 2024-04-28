@@ -13,7 +13,8 @@ namespace InterviewProject
         public DbSet<Post> Posts { get; set; }
         public DbSet<Blog> Blogs { get; set; }
     }
-    public class Data
+
+    public class Data : IData
     {
         private Ctx db;
         public Data() // don't change this constructor
@@ -53,11 +54,20 @@ namespace InterviewProject
 
         public Post GetPost(string title)
         {
-            if (!Regex.IsMatch(title, @"\bpost\b"))
+            if (!title.Contains("post", StringComparison.InvariantCultureIgnoreCase))
             {
-                 throw new ArgumentException("Bad input");
+                // TODO Improve this error later
+                throw new ArgumentException("Bad input");
             }
+
             return db.Posts.FirstOrDefault(p => p.Title == title);
         }
+    }
+
+    public interface IData
+    {
+        Blog Get(int id);
+
+        Post GetPost(string title);
     }
 }
