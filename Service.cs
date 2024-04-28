@@ -5,21 +5,21 @@ namespace InterviewProject
 {
     public class Service
     {
-        private Data data;
-        public Service()
+        public IData Data;
+        public Service(IData data)
         {
-            data = new Data();
+            Data = data;
         }
 
         public string A(int id)
         {
-            var titles = data.Get(id).Posts.Select(p => p.Title);
+            var titles = Data.Get(id).Posts.Select(p => p.Title);
             return string.Join(Environment.NewLine, titles);
         }
 
         public string B(int id)
         {
-            return data.Get(id).Posts.OrderByDescending(p => p.Published).First().Title;
+            return Data.Get(id).Posts.OrderByDescending(p => p.Published).First().Title;
         }
 
         /// <summary>
@@ -29,16 +29,16 @@ namespace InterviewProject
         /// <returns>The content of the first post of the blog</returns>
         public string GetBlogFirstPostContent(int id)
         {
-            return data.Get(id).Posts.First().Content;
+            return Data.Get(id).Posts.First().Content;
         }
 
         public Post D(string title)
         {
-            return data.GetPost(title);
+            return Data.GetPost(title);
         }
-        public Blog E(int id)
+        public Blog GetBlogById(int id)
         {
-            return data.Get(id);
+            return Data.Get(id);
         }
     }
 }

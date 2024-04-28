@@ -6,8 +6,8 @@ namespace InterviewProject
     {
         static void Main(string[] args)
         {
-            var service = new Service();
-            var a = service.E(1);
+            var service = new Service(new Data());
+            var a = service.GetBlogById(1);
             Console.WriteLine($"Blog: {a.BlogId}");
             Console.WriteLine(service.A(1));
             Console.WriteLine("Latest: " + service.B(1));
