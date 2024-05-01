@@ -1,39 +1,51 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace InterviewProject
 {   
     public class Service
     {
-        private Data data;
-        public Service()
+        public IData Data;
+        public Service(IData data)
         {
-            data = new Data();
+            Data = data;
         }
 
-        public string A(int id)
+        public string GetPostTitlesByBlogId(int id)
         {
-            var titles = data.Get(id).Posts.Select(p => p.Title);
+            var titles = Data.GetBlogById(id).Posts.Select(p => p.Title);
             return string.Join(Environment.NewLine, titles);
         }
 
-        public string B(int id)
+        public string GetLatestPostTitleByBlogId(int id)
         {
-            return data.Get(id).Posts.OrderByDescending(p => p.Published).First().Title;
+            return Data.GetBlogById(id).Posts.OrderByDescending(p => p.Published).First().Title;
         }
 
-        public string C(int id)
+        public string GetFirstPostContentByBlogId(int id)
         {
-            return data.Get(id).Posts.First().Content;
+            var blog = Data.GetBlogById(id);
+            if(blog == null || blog.Posts.Count == 0)
+            {
+                return null;
+            }
+            return blog.Posts.First().Content;
         }
 
-        public Post D(string title)
+        public Post GetPostByTitle_StartsWithPost(string title)
         {
-            return data.GetPost(title);
+            if(!title.StartsWith("Post "))
+            {
+                title = $"Post {title}";
+            }
+            
+            return Data.GetPost(title);
         }
-        public Blog E(int id)
+
+        public Blog GetBlogById(int id)
         {
-            return data.Get(id);
+            return Data.GetBlogById(id);
         }
     }
 }

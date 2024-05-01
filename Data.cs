@@ -13,10 +13,16 @@ namespace InterviewProject
         public DbSet<Post> Posts { get; set; }
         public DbSet<Blog> Blogs { get; set; }
     }
-    public class Data
+    public interface IData 
+    {
+        Blog GetBlogById(int id);
+
+        Post GetPost(string title);
+    }
+    public class Data: IData
     {
         private Ctx db;
-        public Data() // don't change this constructor
+        public Data() // don't change this constructor data is unmodifyable
         {
             var options = new DbContextOptionsBuilder<Ctx>()
                 .UseInMemoryDatabase(databaseName: "Test")
@@ -46,17 +52,15 @@ namespace InterviewProject
             db.Blogs.Add(blog);
             db.SaveChanges();
         }
-        public Blog Get(int id)
+        public Blog GetBlogById(int id)
         {
             return db.Blogs.FirstOrDefault(p => p.BlogId == id);
         }
 
         public Post GetPost(string title)
         {
-            if (!Regex.IsMatch(title, @"\bpost\b"))
-            {
-                 throw new ArgumentException("Bad input");
-            }
+            // this validation might be in the wrong layer
+            
             return db.Posts.FirstOrDefault(p => p.Title == title);
         }
     }

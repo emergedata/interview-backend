@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Con-X\\interviewtest\\InterviewProject.Tests\\InterviewProject.Tests.csproj": {}
+    "C:\\Con-X\\interview-backend\\InterviewProject.Tests\\InterviewProject.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Con-X\\interviewtest\\InterviewProject.csproj": {
+    "C:\\Con-X\\interview-backend\\InterviewProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Con-X\\interviewtest\\InterviewProject.csproj",
+        "projectUniqueName": "C:\\Con-X\\interview-backend\\InterviewProject.csproj",
         "projectName": "InterviewProject",
-        "projectPath": "C:\\Con-X\\interviewtest\\InterviewProject.csproj",
+        "projectPath": "C:\\Con-X\\interview-backend\\InterviewProject.csproj",
         "packagesPath": "C:\\Users\\Seth\\.nuget\\packages\\",
-        "outputPath": "C:\\Con-X\\interviewtest\\obj\\",
+        "outputPath": "C:\\Con-X\\interview-backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -80,14 +80,14 @@
         }
       }
     },
-    "C:\\Con-X\\interviewtest\\InterviewProject.Tests\\InterviewProject.Tests.csproj": {
+    "C:\\Con-X\\interview-backend\\InterviewProject.Tests\\InterviewProject.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Con-X\\interviewtest\\InterviewProject.Tests\\InterviewProject.Tests.csproj",
+        "projectUniqueName": "C:\\Con-X\\interview-backend\\InterviewProject.Tests\\InterviewProject.Tests.csproj",
         "projectName": "InterviewProject.Tests",
-        "projectPath": "C:\\Con-X\\interviewtest\\InterviewProject.Tests\\InterviewProject.Tests.csproj",
+        "projectPath": "C:\\Con-X\\interview-backend\\InterviewProject.Tests\\InterviewProject.Tests.csproj",
         "packagesPath": "C:\\Users\\Seth\\.nuget\\packages\\",
-        "outputPath": "C:\\Con-X\\interviewtest\\InterviewProject.Tests\\obj\\",
+        "outputPath": "C:\\Con-X\\interview-backend\\InterviewProject.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -111,8 +111,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Con-X\\interviewtest\\InterviewProject.csproj": {
-                "projectPath": "C:\\Con-X\\interviewtest\\InterviewProject.csproj"
+              "C:\\Con-X\\interview-backend\\InterviewProject.csproj": {
+                "projectPath": "C:\\Con-X\\interview-backend\\InterviewProject.csproj"
               }
             }
           }
